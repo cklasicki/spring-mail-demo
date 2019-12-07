@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Wysyłka maila</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" th:href="@{/styles.css}"/>
+</head>
+<body>
+
+<div id="container">
+    <form method="post" action="#" th:action="@{/sendMail}" th:object="${mailContent}">
+        <fieldset>
+            <label for="recipient" class="labelSize">Odbiorca</label>
+            <input id="recipient" name="recipient" type="text" th:field="*{to}" placeholder="Odbiorca"/>
+            <label for="subject" class="labelSize">Temat</label>
+            <input id="subject" name="subject" type="text" th:field="*{subject}" placeholder="Temat maila"/>
+            <br/>
+            <label for="body" class="labelSize">Treść</label>
+            <textarea id="body" name="body" rows="3" placeholder="Treść Maila" th:field="*{body}"></textarea>
+        </fieldset>
+        <input type="submit" name="Wyślij"/>
+    </form>
+</div>
+</body>
+</html>
